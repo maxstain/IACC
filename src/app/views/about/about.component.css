@@ -1,0 +1,11 @@
+.about-container {
+  border-radius: 15px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  height: 100%;
+}

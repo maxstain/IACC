@@ -1,0 +1,45 @@
+<div class="carousel-container" role="region" aria-label="Image carousel">
+  <div class="carousel-viewport">
+    <div
+      class="carousel-track"
+      [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+    >
+      <div
+        class="carousel-item"
+        *ngFor="let item of items; let i = index"
+        [attr.aria-hidden]="!isActive(i)"
+      >
+        <img [src]="item.src" [alt]="item.title" />
+        <div class="caption">{{ item.title }}</div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="prev-button"
+    (click)="prev()"
+    aria-label="Previous slide"
+    type="button"
+  >
+    &lt;
+  </button>
+  <button
+    class="next-button"
+    (click)="next()"
+    aria-label="Next slide"
+    type="button"
+  >
+    &gt;
+  </button>
+  <div class="carousel-indicators" role="tablist">
+    <button
+      *ngFor="let indicator of getIndicators()"
+      class="indicator"
+      [class.active]="indicator.active"
+      (click)="select(indicator.index)"
+      role="tab"
+      [attr.aria-selected]="indicator.active"
+      [attr.aria-label]="'Slide ' + (indicator.index + 1)"
+      type="button"
+    ></button>
+  </div>
+</div>

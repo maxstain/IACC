@@ -10,6 +10,8 @@ import { AboutComponent } from './views/about/about.component';
 import { ContactComponent } from './views/contact/contact.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FormsModule } from '@angular/forms';
+import { ApartmentsComponent } from './views/apartments/apartments.component';
+import { ApartmentCardComponent } from './components/apartment-card/apartment-card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     ContactComponent,
     CarouselComponent,
+    ApartmentsComponent,
+    ApartmentCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

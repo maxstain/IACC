@@ -1,0 +1,10 @@
+<div class="apartment-card">
+  <img
+    class="apartment-image"
+    [src]="apartment.imageUrl"
+    alt="{{ apartment.name }}"
+  />
+  <div class="apartment-name">{{ apartment.name }}</div>
+  <div class="apartment-location">{{ apartment.location }}</div>
+  <div class="apartment-price">{{ apartment.price | currency }}</div>
+</div>

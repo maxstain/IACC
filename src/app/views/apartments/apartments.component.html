@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Welcome to the Apartments Page</h1>
+  <p>This is the apartments component of the application.</p>
+
+  <div class="apartment-list">
+    <app-apartment-card
+      *ngFor="let apartment of apartments"
+      [apartment]="apartment"
+    />
+  </div>
+</div>

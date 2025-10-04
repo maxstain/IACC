@@ -1,0 +1,33 @@
+.apartment-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.apartment-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.apartment-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.apartment-location {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.apartment-price {
+  font-size: 1.2em;
+  color: #2a9d8f;
+  font-weight: bold;
+}

@@ -1,6 +1,21 @@
 <div class="container">
-  <h1>Welcome to the Apartments Page</h1>
-  <p>This is the apartments component of the application.</p>
+  <div class="header">
+    <div class="intro">
+      <h1>Available apartments</h1>
+      <p>
+        Explore our selection of apartments available for rent. Find your
+        perfect home today!
+      </p>
+    </div>
+    <div class="search-bar">
+      <input
+        [(ngModel)]="inputData"
+        type="text"
+        placeholder="Search apartments..."
+      />
+      <button (click)="search()" class="btn">Search</button>
+    </div>
+  </div>
 
   <div class="apartment-list">
     <app-apartment-card

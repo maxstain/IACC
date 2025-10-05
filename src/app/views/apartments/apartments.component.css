@@ -3,3 +3,39 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.intro {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.search-bar {
+  max-width: 400px;
+  margin: 0 auto 40px;
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 10px 16px;
+  border: none;
+  background: #1e88e5;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}

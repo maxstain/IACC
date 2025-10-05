@@ -8,9 +8,11 @@ import { CommonModule } from '@angular/common';
 export class ApartmentModule {
   id!: number;
   name!: string;
+  description!: string;
   location!: string;
   price!: number;
   imageUrl!: string;
+  features: string[] = [];
 
   constructor() {}
 }

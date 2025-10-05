@@ -4,6 +4,7 @@ import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
 import { ContactComponent } from './views/contact/contact.component';
 import { ApartmentsComponent } from './views/apartments/apartments.component';
+import { ApartmentComponent } from './views/apartments/apartment/apartment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
     component: ContactComponent,
   },
   { path: 'apartments', component: ApartmentsComponent },
+  { path: 'apartment/:id', component: ApartmentComponent },
   { path: '**', redirectTo: '/home' },
 ];
 

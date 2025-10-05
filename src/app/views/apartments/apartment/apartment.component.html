@@ -1,0 +1,48 @@
+<div class="apartment-page" *ngIf="apartment">
+  <div class="hero">
+    <img class="hero-image" [src]="apartment.imageUrl" [alt]="apartment.name" />
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1 class="title">{{ apartment.name }}</h1>
+        <p class="location">{{ apartment.location }}</p>
+        <div class="meta">
+          <span class="price">{{
+            apartment.price | currency : "USD" : "symbol" : "1.0-0"
+          }}</span>
+          <a class="back-link" routerLink="/apartments">← Back to listings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container details-grid">
+    <section class="gallery">
+      <img
+        class="main-image"
+        [src]="apartment.imageUrl"
+        [alt]="apartment.name"
+      />
+      <!-- Placeholder for future carousel or multiple images -->
+    </section>
+
+    <section class="details">
+      <h2>About this apartment</h2>
+      <p class="description">
+        {{ apartment.description }}
+      </p>
+
+      <ul class="features">
+        <li *ngFor="let feature of apartment.features">{{ feature }}</li>
+      </ul>
+
+      <div class="actions">
+        <a class="btn primary" href="tel:+21652640818">Contact Agent</a>
+        <a class="btn" routerLink="/contact">Send Inquiry</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div *ngIf="!apartment" class="not-found">
+  <p>Apartment not found. <a routerLink="/apartments">Return to listings</a></p>
+</div>

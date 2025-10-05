@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 interface CarouselItem {
-  src: string;
-  alt: string;
-  title: string;
+  id: number;
+  name: String;
+  location: String;
+  price: number;
+  imageUrl: String;
 }
 
 @Component({
@@ -14,19 +16,28 @@ interface CarouselItem {
 export class CarouselComponent implements OnInit, OnDestroy {
   items: CarouselItem[] = [
     {
-      src: 'https://plus.unsplash.com/premium_photo-1675198764473-30434364c8b6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      alt: 'Slide 1',
-      title: 'Slide 1',
+      id: 1,
+      name: 'Apartment 1',
+      location: 'Location 1',
+      price: 1000,
+      imageUrl:
+        'https://cdn.carmel-apartments.com/system/uploads/fae/image/asset/18810/three-bedroom-apartmnet-union-market-noho-washington-dc-luxury.jpeg',
     },
     {
-      src: 'https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      alt: 'Slide 2',
-      title: 'Slide 2',
+      id: 2,
+      name: 'Apartment 2',
+      location: 'Location 2',
+      price: 1200,
+      imageUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToYkx4vCo8pSJk3POFq28Il8pD9ANqYjiIsA&s',
     },
     {
-      src: 'https://images.unsplash.com/photo-1692912364084-97b9ae31a8e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      alt: 'Slide 3',
-      title: 'Slide 3',
+      id: 3,
+      name: 'Apartment 3',
+      location: 'Location 3',
+      price: 900,
+      imageUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaqxnJd_8bCCsmv8cXZpjF18M7jRxAd31TEQ&s',
     },
   ];
 

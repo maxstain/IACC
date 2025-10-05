@@ -9,8 +9,8 @@
         *ngFor="let item of items; let i = index"
         [attr.aria-hidden]="!isActive(i)"
       >
-        <img [src]="item.src" [alt]="item.title" />
-        <div class="caption">{{ item.title }}</div>
+        <img [src]="item.imageUrl" [alt]="item.name" />
+        <div class="caption">{{ item.name }}</div>
       </div>
     </div>
   </div>

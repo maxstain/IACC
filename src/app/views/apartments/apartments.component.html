@@ -15,6 +15,9 @@
       />
       <button (click)="search()" class="btn">Search</button>
     </div>
+    <div *ngIf="!userRole" class="add-apartment">
+      <a routerLink="/apartment/add" class="btn btn-primary">Add Apartment</a>
+    </div>
   </div>
 
   <div class="apartment-list">

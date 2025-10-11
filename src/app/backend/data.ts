@@ -1,4 +1,6 @@
-export const apartments = [
+import { ApartmentModule } from '../models/apartment/apartment.module';
+
+export var apartments: ApartmentModule[] = [
   {
     id: 1,
     name: 'Skyline Residence',

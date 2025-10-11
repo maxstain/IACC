@@ -20,7 +20,6 @@
 }
 
 .carousel {
-  /* kept for backward compatibility but no longer the track */
   position: relative;
 }
 

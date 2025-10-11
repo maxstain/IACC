@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { apartments } from 'src/app/backend/data';
 import { ApartmentModule } from 'src/app/models/apartment/apartment.module';
+import { ApartmentService } from 'src/app/services/apartmentServices/apartment.service';
 
 @Component({
   selector: 'app-apartments',
@@ -9,6 +10,8 @@ import { ApartmentModule } from 'src/app/models/apartment/apartment.module';
 })
 export class ApartmentsComponent {
   apartments: ApartmentModule[] = [];
+  userRole: string = localStorage.getItem('role') || '';
+  apartmentServices: ApartmentService = new ApartmentService();
 
   inputData: String = '';
 
@@ -23,6 +26,11 @@ export class ApartmentsComponent {
   }
 
   constructor() {
-    this.apartments = apartments;
+    this.apartmentServices
+      .getApartments()
+      .pipe()
+      .subscribe((data) => {
+        this.apartments = data;
+      });
   }
 }

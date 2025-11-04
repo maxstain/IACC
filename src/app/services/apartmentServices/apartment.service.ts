@@ -7,7 +7,7 @@ import { ApartmentModule } from 'src/app/models/apartment/apartment.module';
   providedIn: 'root',
 })
 export class ApartmentService {
-  getApartments():Observable<ApartmentModule[]> {
+  getApartments(): Observable<ApartmentModule[]> {
     return new Observable((observer) => {
       observer.next(apartments);
       observer.complete();
@@ -34,5 +34,5 @@ export class ApartmentService {
     apartments[index] = updatedApartment;
   }
 
-  constructor() {}
+  constructor() { }
 }

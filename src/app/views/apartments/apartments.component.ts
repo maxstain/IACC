@@ -15,14 +15,31 @@ export class ApartmentsComponent {
 
   inputData: String = '';
 
+  selectedLocation: string = '';
+  locations: string[] = Array.from(
+    new Set(apartments.map((apartment) => apartment.location))
+  );
+
   search() {
-    if (this.inputData === '') {
+    if (this.inputData === '' && this.selectedLocation === '') {
       this.apartments = apartments;
       return;
     }
-    this.apartments = apartments.filter((apartment) =>
-      apartment.name.toLowerCase().includes(this.inputData.toLowerCase())
-    );
+    this.apartments = apartments.filter((apartment) => {
+      const matchesTitle = apartment.name
+        .toLowerCase()
+        .includes(this.inputData.toString().toLowerCase());
+      const matchesLocation = this.selectedLocation
+        ? apartment.location === this.selectedLocation
+        : true;
+      return matchesTitle && matchesLocation;
+    });
+  }
+
+  clear() {
+    this.inputData = '';
+    this.selectedLocation = '';
+    this.apartments = apartments;
   }
 
   constructor() {

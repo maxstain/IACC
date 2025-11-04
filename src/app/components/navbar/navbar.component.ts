@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { UserService } from 'src/app/services/userServices/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class NavbarComponent {
   @Input() title: string = '';
+  userServices: UserService = new UserService();
+
+  get isLoggedIn(): boolean {
+    return this.userServices.isLoggedIn();
+  }
 }

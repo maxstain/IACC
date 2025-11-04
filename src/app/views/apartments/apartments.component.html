@@ -13,7 +13,14 @@
         type="text"
         placeholder="Search apartments..."
       />
+      <select class="form-select w-25" [(ngModel)]="selectedLocation" aria-label="Default select example">
+        <option class="w-24" value="">All Locations</option>
+        <option class="w-24" *ngFor="let location of locations" [value]="location">
+          {{ location }}
+        </option>
+      </select>
       <button (click)="search()" class="btn">Search</button>
+      <button (click)="clear()" class="btn">X</button>
     </div>
     <div *ngIf="!userRole" class="add-apartment">
       <a routerLink="/apartment/add" class="btn btn-primary">Add Apartment</a>

@@ -8,8 +8,11 @@
         <div class="meta">
           <span class="price">{{
             apartment.price | currency : "USD" : "symbol" : "1.0-0"
-          }}</span>
+            }}</span>
           <a class="back-link" routerLink="/apartments">← Back to listings</a>
+          <button *ngIf="userRole==='Admin'" class="btn btn-danger" (click)="onClickDelete()" [disabled]="deletingId===apartment.id">
+            {{ deletingId === apartment.id ? 'Deleting...' : 'X' }}
+          </button>
         </div>
       </div>
     </div>
@@ -17,11 +20,7 @@
 
   <main class="container details-grid">
     <section class="gallery">
-      <img
-        class="main-image"
-        [src]="apartment.imageUrl"
-        [alt]="apartment.name"
-      />
+      <img class="main-image" [src]="apartment.imageUrl" [alt]="apartment.name" />
       <!-- Placeholder for future carousel or multiple images -->
     </section>
 
@@ -44,5 +43,5 @@
 </div>
 
 <div *ngIf="!apartment" class="not-found">
-  <p>Apartment not found. <a routerLink="/apartments">Return to listings</a></p>
+  <p>{{ errorMsg }} <a routerLink="/apartments">Return to listings</a></p>
 </div>

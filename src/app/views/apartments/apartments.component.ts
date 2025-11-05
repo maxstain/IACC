@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { apartments } from 'src/app/backend/data';
-import { ApartmentModule } from 'src/app/models/apartment/apartment.module';
+import { Apartment } from 'src/app/models/apartment';
 import { ApartmentService } from 'src/app/services/apartmentServices/apartment.service';
 
 @Component({
@@ -9,23 +8,46 @@ import { ApartmentService } from 'src/app/services/apartmentServices/apartment.s
   styleUrls: ['./apartments.component.css'],
 })
 export class ApartmentsComponent {
-  apartments: ApartmentModule[] = [];
+  apartments: Apartment[] = [];
   userRole: string = localStorage.getItem('role') || '';
-  apartmentServices: ApartmentService = new ApartmentService();
 
   inputData: String = '';
 
   selectedLocation: string = '';
-  locations: string[] = Array.from(
-    new Set(apartments.map((apartment) => apartment.location))
-  );
+  locations: string[] = [];
+  loading: boolean = false;
+
+  constructor(private apartmentService: ApartmentService) {
+  }
+
+
+  ngOnInit(): void {
+    this.loading = true;
+    this.apartmentService.getApartments().subscribe({
+      next: (data) => {
+        this.apartments = data;
+        this.locations = Array.from(
+          new Set(this.apartments.map((apartment) => apartment.location))
+        );
+      },
+      error: () => { }, // already logged in service
+      complete: () => (this.loading = false),
+    });
+  }
+
 
   search() {
     if (this.inputData === '' && this.selectedLocation === '') {
-      this.apartments = apartments;
+      this.apartmentService.getApartments().subscribe(
+        {
+          next: (data) => (this.apartments = data),
+          error: () => { }, // already logged in service
+          complete: () => (this.loading = false),
+        }
+      )
       return;
     }
-    this.apartments = apartments.filter((apartment) => {
+    this.apartments = this.apartments.filter((apartment) => {
       const matchesTitle = apartment.name
         .toLowerCase()
         .includes(this.inputData.toString().toLowerCase());
@@ -39,15 +61,12 @@ export class ApartmentsComponent {
   clear() {
     this.inputData = '';
     this.selectedLocation = '';
-    this.apartments = apartments;
-  }
-
-  constructor() {
-    this.apartmentServices
-      .getApartments()
-      .pipe()
-      .subscribe((data) => {
-        this.apartments = data;
-      });
+    this.apartmentService.getApartments().subscribe(
+      {
+        next: (data) => (this.apartments = data),
+        error: () => { }, // already logged in service
+        complete: () => (this.loading = false),
+      }
+    );
   }
 }

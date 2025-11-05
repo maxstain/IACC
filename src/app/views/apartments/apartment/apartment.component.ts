@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { apartments } from 'src/app/backend/data';
-import { ApartmentModule } from 'src/app/models/apartment/apartment.module';
+import { Apartment } from 'src/app/models/apartment';
+import { ApartmentService } from 'src/app/services/apartmentServices/apartment.service';
 
 @Component({
   selector: 'app-apartment',
@@ -9,12 +9,36 @@ import { ApartmentModule } from 'src/app/models/apartment/apartment.module';
   styleUrls: ['./apartment.component.css'],
 })
 export class ApartmentComponent {
-  apartment!: ApartmentModule;
+  apartment!: Apartment;
+  errorMsg: string = '';
+  userRole: string = 'Admin';
+  id!: string;
+  deletingId: number | string | null = null;
 
-  constructor(router: Router) {
-    apartments.map((apt: ApartmentModule) => {
-      if (apt.id.toString() === router.url.split('/')[2]) {
-        this.apartment = apt;
+  constructor(
+    private router: Router,
+    private apartmentService: ApartmentService
+  ) {
+    this.id = router.url.split('/')[2];
+
+    this.apartmentService.getApartmentById(this.id).subscribe({
+      next: apt => this.apartment = apt,
+      error: err => this.errorMsg = 'Could not load apartment.'
+    });
+  }
+
+  onClickDelete() {
+    this.deletingId = this.apartment.id;
+    this.apartmentService.deleteApartment(this.apartment.id).subscribe({
+      next: () => {
+        this.router.navigate(['/apartments']);
+      },
+      error: (err) => {
+        this.errorMsg = 'Failed to delete apartment. Please try again.';
+        console.error(err);
+      },
+      complete: () => {
+        this.deletingId = null;
       }
     });
   }

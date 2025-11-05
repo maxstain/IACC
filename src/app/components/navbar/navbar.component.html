@@ -3,7 +3,7 @@
     <h1 class="text-white text-4xl fw-bold">{{ title }}</h1>
   </a>
   <a class="text-decoration-none fw-bold text-white" routerLink="/apartments">Apartments</a>
-  <div class="d-flex gap-3">
+  <div class="d-flex gap-3 align-items-center">
     <ul class="d-flex list-unstyled gap-3 mb-0">
       <li>
         <a class="text-decoration-none text-white fw-bold" routerLink="/">Home</a>
@@ -15,9 +15,8 @@
         <a class="text-decoration-none text-white fw-bold" routerLink="/contact">Contact</a>
       </li>
     </ul>
-    <div *ngIf="isLoggedIn">
-      Welcome,
-      <span class="fw-bold">{{ 'Guest' }}</span>
+    <div class="rounded-circle border bg-light p-3" *ngIf="isLoggedIn">
+      <img class="rounded-circle">
     </div>
   </div>
 </nav>

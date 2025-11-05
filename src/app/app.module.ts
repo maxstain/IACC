@@ -15,6 +15,8 @@ import { ApartmentCardComponent } from './components/apartment-card/apartment-ca
 import { ApartmentComponent } from './views/apartments/apartment/apartment.component';
 import { AddApartmentComponent } from './views/apartments/add-apartment/add-apartment.component';
 import { ErrorComponent } from './views/error/error.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApartmentListSkeletonComponent } from './components/apartment-list-skeleton/apartment-list-skeleton.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { ErrorComponent } from './views/error/error.component';
     ApartmentComponent,
     AddApartmentComponent,
     ErrorComponent,
+    ApartmentListSkeletonComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

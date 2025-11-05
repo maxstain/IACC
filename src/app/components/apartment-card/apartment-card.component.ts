@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApartmentModule } from 'src/app/models/apartment/apartment.module';
+import { Apartment } from 'src/app/models/apartment';
 
 @Component({
   selector: 'app-apartment-card',
@@ -8,7 +8,7 @@ import { ApartmentModule } from 'src/app/models/apartment/apartment.module';
   styleUrls: ['./apartment-card.component.css'],
 })
 export class ApartmentCardComponent {
-  @Input() apartment!: ApartmentModule;
+  @Input() apartment!: Apartment;
   router: Router;
 
   constructor(router: Router) {

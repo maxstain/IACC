@@ -7,18 +7,20 @@
         perfect home today!
       </p>
     </div>
-    <div class="search-bar">
-      <input (ngModel)="inputData" type="text" placeholder="Search apartments..." />
-      <select class="form-select w-25" (ngModel)="selectedLocation" aria-label="Default select example">
-        <option class="w-24" value="">All Locations</option>
-        <option class="w-24" *ngFor="let location of locations" [value]="location">
-          {{ location }}
-        </option>
-      </select>
-      <button (click)="search()" class="btn">Search</button>
-      <button (click)="clear()" class="btn">X</button>
-    </div>
-    <div *ngIf="!userRole" class="add-apartment">
+    <form [formGroup]="formGroup">
+      <div class="search-bar">
+        <input formControlName="inputData" type="text" placeholder="Search apartments..." />
+        <select class="form-select w-25" formControlName="selectedLocation" aria-label="Default select example">
+          <option class="w-24" value="">All Locations</option>
+          <option class="w-24" *ngFor="let location of locations" [value]="location">
+            {{ location }}
+          </option>
+        </select>
+        <button (click)="search()" class="btn">Search</button>
+        <button (click)="clear()" class="btn">X</button>
+      </div>
+    </form>
+    <div *ngIf="userRole === 'admin'" class="add-apartment">
       <a routerLink="/apartment/add" class="btn btn-primary">Add Apartment</a>
     </div>
   </div>

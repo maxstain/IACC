@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -20,9 +20,12 @@ export class ContactComponent {
     twitter: 'https://twitter.com/firas_chabchoub',
   };
 
-  fb: FormBuilder = new FormBuilder()
-
-  form: FormGroup = this.fb.group({});
+  form: FormGroup = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    subject: new FormControl(''),
+    message: new FormControl(''),
+  });
 
   onSubmit(): void {
     // Handle form submission logic here

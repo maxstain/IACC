@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Apartment } from 'src/app/models/apartment';
 import { ApartmentService } from 'src/app/services/apartmentServices/apartment.service';
 
@@ -11,9 +12,11 @@ export class ApartmentsComponent {
   apartments: Apartment[] = [];
   userRole: string = localStorage.getItem('role') || '';
 
-  inputData: String = '';
+  formGroup = new FormGroup({
+    inputData: new FormControl(''),
+    selectedLocation: new FormControl('')
+  });
 
-  selectedLocation: string = '';
   locations: string[] = [];
   loading: boolean = false;
 
@@ -37,7 +40,8 @@ export class ApartmentsComponent {
 
 
   search() {
-    if (this.inputData === '' && this.selectedLocation === '') {
+    console.log(this.formGroup.value.inputData)
+    if (this.formGroup.value.inputData === '' && this.formGroup.value.selectedLocation === '') {
       this.apartmentService.getApartments().subscribe(
         {
           next: (data) => (this.apartments = data),
@@ -50,17 +54,16 @@ export class ApartmentsComponent {
     this.apartments = this.apartments.filter((apartment) => {
       const matchesTitle = apartment.name
         .toLowerCase()
-        .includes(this.inputData.toString().toLowerCase());
-      const matchesLocation = this.selectedLocation
-        ? apartment.location === this.selectedLocation
+        .includes(this.formGroup.value.inputData!.toLowerCase());
+      const matchesLocation = this.formGroup.value.selectedLocation
+        ? apartment.location === this.formGroup.value.selectedLocation
         : true;
       return matchesTitle && matchesLocation;
     });
   }
 
   clear() {
-    this.inputData = '';
-    this.selectedLocation = '';
+    this.formGroup.setValue({ inputData: '', selectedLocation: '' });
     this.apartmentService.getApartments().subscribe(
       {
         next: (data) => (this.apartments = data),

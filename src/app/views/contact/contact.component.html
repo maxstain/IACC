@@ -1,13 +1,13 @@
 <div class="contact-container">
   <h1>Contact Us</h1>
-  <form (ngSubmit)="onSubmit()" [formGroup]="form" class="contact-form">
+  <form (submit)="onSubmit()" [formGroup]="form" class="contact-form">
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" ngModel required class="form-control" />
+      <input formControlName="name" type="text" id="name" name="name" required class="form-control" />
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" ngModel required class="form-control" />
+      <input formControlName="email" type="email" id="email" name="email" required class="form-control" />
       <label for="message">Message:</label>
-      <textarea id="message" name="message" ngModel required class="form-control"></textarea>
+      <textarea formControlName="message" id="message" name="message" required class="form-control"></textarea>
     </div>
     <button type="submit" [disabled]="!form.valid" class="submit-button">
       Submit

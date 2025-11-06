@@ -10,7 +10,7 @@ export class ContactComponent {
   submitted = false;
 
   contactInfo = {
-    phone: '+216 52640818',
+    phone: '+21652640818',
     email: 'firaschabchoub@gmail.com',
   };
 

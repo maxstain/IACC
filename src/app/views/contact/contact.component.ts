@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -19,10 +20,12 @@ export class ContactComponent {
     twitter: 'https://twitter.com/firas_chabchoub',
   };
 
-  contactForm: FormData = new FormData();
+  fb: FormBuilder = new FormBuilder()
+
+  form: FormGroup = this.fb.group({});
 
   onSubmit(): void {
     // Handle form submission logic here
-    console.log('Form submitted:', this.contactForm);
+    console.log('Form submitted:', this.form);
   }
 }

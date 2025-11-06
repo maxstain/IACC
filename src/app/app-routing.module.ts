@@ -7,9 +7,13 @@ import { ApartmentsComponent } from './views/apartments/apartments.component';
 import { ApartmentComponent } from './views/apartments/apartment/apartment.component';
 import { AddApartmentComponent } from './views/apartments/add-apartment/add-apartment.component';
 import { ErrorComponent } from './views/error/error.component';
+import { LoginComponent } from './views/auth/login/login.component';
+import { SigninComponent } from './views/auth/signin/signin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent },
   {
     path: 'about',

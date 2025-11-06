@@ -6,7 +6,7 @@ import { ApartmentService } from 'src/app/services/apartmentServices/apartment.s
 @Component({
   selector: 'app-add-apartment',
   templateUrl: './add-apartment.component.html',
-  styleUrls: ['./add-apartment.component.css']
+  styleUrls: ['./add-apartment.component.css'],
 })
 export class AddApartmentComponent {
 
@@ -21,7 +21,6 @@ export class AddApartmentComponent {
     imageUrl: [
       '',
       [
-        Validators.required,
         Validators.pattern(/^https?:\/\/.+/i), // simple URL check
       ],
     ],

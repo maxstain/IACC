@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/authServices/auth-service.service';
 import { UserService } from 'src/app/services/userServices/user.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class NavbarComponent {
   currentUser!: User;
 
   constructor(
-    private userServices: UserService
+    private userServices: UserService,
+    private authServices: AuthService
   ) { }
 
   ngOnInit() {
@@ -21,6 +23,6 @@ export class NavbarComponent {
   }
 
   get isLoggedIn(): boolean {
-    return this.userServices.isLoggedIn();
+    return this.authServices.isLoggedIn();
   }
 }

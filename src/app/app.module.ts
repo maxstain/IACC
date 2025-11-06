@@ -9,7 +9,7 @@ import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
 import { ContactComponent } from './views/contact/contact.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApartmentsComponent } from './views/apartments/apartments.component';
 import { ApartmentCardComponent } from './components/apartment-card/apartment-card.component';
 import { ApartmentComponent } from './views/apartments/apartment/apartment.component';
@@ -17,6 +17,8 @@ import { AddApartmentComponent } from './views/apartments/add-apartment/add-apar
 import { ErrorComponent } from './views/error/error.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApartmentListSkeletonComponent } from './components/apartment-list-skeleton/apartment-list-skeleton.component';
+import { LoginComponent } from './views/auth/login/login.component';
+import { SigninComponent } from './views/auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,10 @@ import { ApartmentListSkeletonComponent } from './components/apartment-list-skel
     AddApartmentComponent,
     ErrorComponent,
     ApartmentListSkeletonComponent,
+    LoginComponent,
+    SigninComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,6 +1,6 @@
 <div class="container">
   <!-- add-apartment.component.html -->
-  <form formGroup="form" (ngSubmit)="submit()">
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <div>
       <label>Name</label>
       <input formControlName="name" />
@@ -39,7 +39,7 @@
       </div>
 
       <ul>
-        <li *ngFor="let f of featuresArray.controls; let i = index">
+        <li class="rounded-pill" *ngFor="let f of featuresArray.controls; let i = index">
           {{ f.value }}
           <button type="button" (click)="removeFeature(i)">×</button>
         </li>

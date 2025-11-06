@@ -7,11 +7,8 @@
       "location": "Hammamet Nord",
       "price": 1400,
       "imageUrl": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-      "features": [
-        "Sea View",
-        "Terrace",
-        "WiFi"
-      ]
+      "featured": true,
+      "features": ["Sea View", "Terrace", "WiFi"]
     },
     {
       "id": "7",
@@ -20,11 +17,8 @@
       "location": "Ennasr 2, Tunis",
       "price": 1600,
       "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-      "features": [
-        "Pool",
-        "Gym",
-        "WiFi"
-      ]
+      "featured": true,
+      "features": ["Pool", "Gym", "WiFi"]
     },
     {
       "id": "9",
@@ -33,11 +27,8 @@
       "location": "Gammarth Hills, Tunis",
       "price": 2100,
       "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
-      "features": [
-        "Private Garden",
-        "Pool",
-        "WiFi"
-      ]
+      "featured": true,
+      "features": ["Private Garden", "Pool", "WiFi"]
     },
     {
       "id": "10",
@@ -46,11 +37,8 @@
       "location": "Monastir Marina",
       "price": 1150,
       "imageUrl": "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg",
-      "features": [
-        "Balcony",
-        "Sea View",
-        "WiFi"
-      ]
+      "featured": false,
+      "features": ["Balcony", "Sea View", "WiFi"]
     },
     {
       "id": "11",
@@ -59,11 +47,8 @@
       "location": "Hammamet Yasmine",
       "price": 1750,
       "imageUrl": "https://images.unsplash.com/photo-1598300053650-5fef2b12b9c3",
-      "features": [
-        "Pool",
-        "Gym",
-        "WiFi"
-      ]
+      "featured": false,
+      "features": ["Pool", "Gym", "WiFi"]
     },
     {
       "id": "12",
@@ -72,11 +57,8 @@
       "location": "La Goulette, Tunis",
       "price": 980,
       "imageUrl": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg",
-      "features": [
-        "Terrace",
-        "WiFi",
-        "Air Conditioning"
-      ]
+      "featured": false,
+      "features": ["Terrace", "WiFi", "Air Conditioning"]
     },
     {
       "id": "13",
@@ -85,11 +67,8 @@
       "location": "Sidi Bou Said",
       "price": 1250,
       "imageUrl": "https://images.unsplash.com/photo-1572120360610-d971b9b78825",
-      "features": [
-        "Balcony",
-        "Sea View",
-        "WiFi"
-      ]
+      "featured": false,
+      "features": ["Balcony", "Sea View", "WiFi"]
     },
     {
       "id": "14",
@@ -98,11 +77,8 @@
       "location": "Carthage Byrsa",
       "price": 1950,
       "imageUrl": "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg",
-      "features": [
-        "Pool",
-        "Garden",
-        "Parking"
-      ]
+      "featured": false,
+      "features": ["Pool", "Garden", "Parking"]
     },
     {
       "id": "15",
@@ -111,11 +87,8 @@
       "location": "Nabeul Center",
       "price": 870,
       "imageUrl": "https://images.unsplash.com/photo-1600585154209-1fe04d92e2f6",
-      "features": [
-        "WiFi",
-        "Parking",
-        "Air Conditioning"
-      ]
+      "featured": false,
+      "features": ["WiFi", "Parking", "Air Conditioning"]
     },
     {
       "id": "16",
@@ -124,11 +97,8 @@
       "location": "La Marsa Plage",
       "price": 1550,
       "imageUrl": "https://images.unsplash.com/photo-1554995207-c18c203602cb",
-      "features": [
-        "Balcony",
-        "Sea View",
-        "WiFi"
-      ]
+      "featured": false,
+      "features": ["Balcony", "Sea View", "WiFi"]
     },
     {
       "id": "17",
@@ -137,11 +107,8 @@
       "location": "Ezzahra, Ben Arous",
       "price": 990,
       "imageUrl": "https://images.unsplash.com/photo-1560184897-900d27e47c4b",
-      "features": [
-        "Smart Home",
-        "Gym",
-        "WiFi"
-      ]
+      "featured": false,
+      "features": ["Smart Home", "Gym", "WiFi"]
     },
     {
       "id": "18",
@@ -150,11 +117,8 @@
       "location": "Bizerte Corniche",
       "price": 1100,
       "imageUrl": "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg",
-      "features": [
-        "Sea View",
-        "Balcony",
-        "WiFi"
-      ]
+      "featured": false,
+      "features": ["Sea View", "Balcony", "WiFi"]
     },
     {
       "id": "19",
@@ -163,11 +127,8 @@
       "location": "Manar 1, Tunis",
       "price": 1300,
       "imageUrl": "https://images.unsplash.com/photo-1600585154238-2a9b99e1b1b0",
-      "features": [
-        "Rooftop Access",
-        "Parking",
-        "WiFi"
-      ]
+      "featured": false,
+      "features": ["Rooftop Access", "Parking", "WiFi"]
     },
     {
       "id": "20",
@@ -176,11 +137,8 @@
       "location": "Kairouan Downtown",
       "price": 870,
       "imageUrl": "https://images.unsplash.com/photo-1599423300746-b62533397364",
-      "features": [
-        "WiFi",
-        "Air Conditioning",
-        "Balcony"
-      ]
+      "featured": false,
+      "features": ["WiFi", "Air Conditioning", "Balcony"]
     }
   ],
   "users": []

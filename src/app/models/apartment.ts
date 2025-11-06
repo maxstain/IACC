@@ -5,5 +5,6 @@ export interface Apartment {
   location: string;
   price: number;
   imageUrl: string;
+  featured: boolean;
   features: string[];
 }

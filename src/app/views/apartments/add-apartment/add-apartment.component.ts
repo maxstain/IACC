@@ -64,6 +64,7 @@ export class AddApartmentComponent {
         location: string;
         price: number;
         imageUrl: string;
+        featured: boolean;
         features: string[];
       },
       'id'

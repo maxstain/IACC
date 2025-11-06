@@ -35,7 +35,6 @@ export class ApartmentService {
     );
   }
 
-
   addApartment(apartment: Omit<Apartment, 'id'>): Observable<Apartment> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 

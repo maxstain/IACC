@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/authServices/auth-service.service';
 
@@ -10,10 +10,9 @@ import { AuthService } from 'src/app/services/authServices/auth-service.service'
 })
 export class LoginComponent {
 
-  fb: FormBuilder = new FormBuilder()
-  form: FormGroup = this.fb.group({
-    email: ['', Validators.required, Validators.email],
-    password: ['', Validators.required, Validators.maxLength(20)],
+  form: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
 
   errMsg: string = '';
@@ -36,8 +35,16 @@ export class LoginComponent {
     this.authService
       .loginWithEmailAndPassword(this.form.value.email, this.form.value.password)
       .subscribe({
-        next: (_) => {
+        next: (usr) => {
           this.submitting = false;
+          if (!usr) {
+            this.errMsg = 'Invalid email or password';
+            return;
+          }
+          usr.token = 'fake-jwt-token-for-demo-purposes';
+          localStorage.setItem('token', usr.token)
+          this.authService.user = usr;
+          console.log(usr)
           this.router.navigate(['/home'])
         },
         error: (err) => {

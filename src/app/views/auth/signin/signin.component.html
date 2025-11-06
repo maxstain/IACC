@@ -1,1 +1,60 @@
-<p>signin works!</p>
+<div class="container w-50 shadow-sm p-4 mt-5 bg-white border rounded-4">
+  <form
+    [formGroup]="formGroup"
+    (ngSubmit)="onSubmit()"
+    class="d-flex flex-column justify-items-center"
+  >
+    <h2 class="text-center mb-4">Sign In</h2>
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input
+        formControlName="username"
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="Enter your username"
+      />
+    </div>
+    <small
+      class="text-danger mb-3"
+      *ngIf="formGroup.get('username')?.invalid && formGroup.get('username')?.touched"
+    >
+      Username is required
+    </small>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your email"
+      />
+    </div>
+    <small
+      class="text-danger mb-3"
+      *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched"
+    >
+      Email is required
+    </small>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Enter your password"
+      />
+    </div>
+    <small
+      class="text-danger mb-3"
+      *ngIf="formGroup.get('password')?.invalid && formGroup.get('password')?.touched"
+    >
+      Password is required and must be at least 6 characters long
+    </small>
+    <button type="submit" class="btn btn-primary mt-3">
+      {{ loading ? "Signing In..." : "Sign In" }}
+    </button>
+  </form>
+</div>

@@ -141,5 +141,14 @@
       "features": ["WiFi", "Air Conditioning", "Balcony"]
     }
   ],
-  "users": []
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@test.net",
+      "password": "admin123",
+      "role": "admin",
+      "token": ""
+    }
+  ]
 }
